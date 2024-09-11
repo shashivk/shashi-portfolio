@@ -12,8 +12,8 @@ Make sure you have the following installed on your machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/vyankateshmisar/PersonalPortfolio
-   cd PersonalPortfolio
+   git clone https://github.com/shashivk/shashi-portfolio.git
+   cd personal-portfolio
 2. **Install dependencies:**
    ```bash
    npm install
