@@ -60,7 +60,7 @@ export const personalDetails = {
   name: "Shashikumar Vanga",
   tagline: "I am a Full Stack Java Developer",
   img: profile,
-  about: `Full Stack Java Developer with around 5 years of experience in designing, developing, and managing high-performance web and mobile applications using Java, Spring Boot, React, and Angular. Demonstrated expertise in leveraging cloud platforms (Azure, AWS, Pivotal Cloud Foundry) and CI/CD pipelines to optimize deployment and operational workflows. Dedicated to building scalable, efficient, and cutting-edge software solutions that drive business success.`,
+  about: `Senior Software Engineer with around 5 years of experience in designing, developing, and managing high-performance web and mobile applications using Java, Spring Boot, React, and Angular. Demonstrated expertise in leveraging cloud platforms (Azure, AWS, Pivotal Cloud Foundry) and CI/CD pipelines to optimize deployment and operational workflows. Dedicated to building scalable, efficient, and cutting-edge software solutions that drive business success.`,
 };
 
 // Enter your Social Media URLs here
@@ -73,6 +73,14 @@ export const socialMediaUrl = {
 
 // Enter your Work Experience here
 export const workDetails = [
+  {
+    Position: "Senior Software Engineer",
+    Company: `Citibank`,
+    Location: "Tampa, FL",
+    Type: "Full-time",
+    Duration: "November 2024 - Present",
+    // Description:""
+  },
   {
     Position: "Full Stack Java Developer",
     Company: `Molina Healthcare`,
