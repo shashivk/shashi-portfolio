@@ -1,136 +1,141 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { techStackDetails } from "../Details";
 
-// function Technologies() {
-//   const {
-//     html,
-//     css,
-//     js,
-//     react,
-//     redux,
-//     tailwind,
-//     bootstrap,
-//     sass,
-//     vscode,
-//     git,
-//     github,
-//     npm,
-//     postman,
-//     figma,
-//   } = techStackDetails;
-//   return (
-//     <main className="container mx-auto max-width pt-10 pb-20 ">
-//       <section>
-//         <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-//           Tech Stack
-//         </h1>
-//         <p className="text-content py-2 lg:max-w-3xl">
-//           Technologies I've been working with recently
-//         </p>
-//       </section>
-//       <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-//         <img src={html} title="html" alt="" />
-//         <img src={css} title="CSS" alt="" />
-//         <img src={js} title="JavaScript" alt="" />
-//         <img src={react} title="React" alt="" />
-//         <img src={redux} title="Redux" alt="" />
-//         <img src={tailwind} title="Tailwind CSS" alt="" />
-//         <img src={bootstrap} title="Bootstrap" alt="" />
-//         <img src={sass} title="SASS" alt="" />
-//       </section>
-//       <section>
-//         <h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-//           Tools
-//         </h1>
-//       </section>
-//       <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-//         <img src={vscode} title="Visual Studio Code" alt="" />
-//         <img src={git} title="Git" alt="Git" />
-//         <img src={github} title="Github" alt="Github" />
-//         <img src={figma} title="Figma" alt="Figma" />
-//         <img src={npm} title="NPM" alt="NPM" />
-//         <img src={postman} title="Postman" alt="Postman" />
-//       </section>
-//     </main>
-//   );
-// }
+const TECH_LABELS = {
+  java: "Java",
+  springboot: "Spring Boot",
+  js: "JavaScript",
+  nodejs: "Node.js",
+  express: "Express",
+  postgre: "PostgreSQL",
+  redis: "Redis",
+  mysql: "MySQL",
+  html: "HTML5",
+  css: "CSS3",
+  react: "React",
+  bootstrap: "Bootstrap",
+  tf: "TensorFlow",
+  aws: "AWS",
+  vscode: "VS Code",
+  intellij: "IntelliJ",
+  git: "Git",
+  github: "GitHub",
+  figma: "Figma",
+  insomnia: "Insomnia",
+  nginx: "Nginx",
+  jenkins: "Jenkins",
+  redux: "Redux",
+  npm: "NPM",
+  tailwind: "Tailwind",
+};
 
 function Technologies() {
-  const {
-    tf,
-    // flask,
-    // django,
-    aws,
-    // python,
-    java,
-    springboot,
-    express,
-    jenkins,
-    nginx,
-    nodejs,
-    redis,
-    mysql,
-    postgre,
-    insomnia,
-    html,
-    css,
-    js,
-    react,
-    bootstrap,
-    vscode,
-    git,
-    github,
-    // npm,
-    figma,
-    intellij,
-    // pytorch
-  } = techStackDetails;
-  return (
-    <main className="container mx-auto max-width pt-10 pb-20 ">
-      <section>
-        <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Tech Stack
-        </h1>
-        {/* <p className="text-content py-2 lg:max-w-3xl">
-          Technologies I've been working with recently
-        </p> */}
-      </section>
-      <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-        {/* <img src={python} title="Python" alt="Python" /> */}
-        {/* <img src={django} title="Django" alt="Django" /> */}
-        {/* <img src={flask} title="flask" alt="flask" /> */}
-        <img src={java} title="Java" alt="Java" />
-        <img src={springboot} title="springboot" alt="springboot" />
-        <img src={js} title="JavaScript" alt="JavaScript" />
-        <img src={nodejs} title="nodejs" alt="nodejs" />
-        <img src={express} title="express" alt="express" />
+  const sectionRef = useRef(null);
 
-        <img src={postgre} title="postgre" alt="postgre" />
-        <img src={redis} title="redis" alt="redis" />
-        <img src={mysql} title="Mysql" alt="Mysql" />
-        <img src={html} title="html" alt="html" />
-        <img src={css} title="CSS" alt="CSS" />
-        <img src={react} title="react" alt="react" />
-        <img src={bootstrap} title="bootstrap" alt="bootstrap" />
-        {/* <img src={pytorch} title="Pyrorch" alt="Pyrorch" /> */}
-        <img src={tf} title="TensorFlow" alt="TensorFlow" />
-      </section>
-      <section>
-        <h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
-          Tools
-        </h1>
-      </section>
-      <section className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 items-center gap-10 pt-6">
-        <img src={aws} title="Amazon Web Services" alt="aws" />
-        <img src={vscode} title="Visual Studio Code" alt="vscode" />
-        <img src={intellij} title="intellij" alt="intellij" />
-        <img src={git} title="Git" alt="Git" />
-        <img src={github} title="Github" alt="Github" />
-        <img src={figma} title="Figma" alt="Figma" />
-        <img src={insomnia} title="Insomnia" alt="insomnia" />
-        <img src={nginx} title="nginx" alt="nginx" />
-        <img src={jenkins} title="jenkins" alt="jenkins" />
-      </section>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) entry.target.classList.add("revealed");
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const {
+    tf, aws, java, springboot, express, jenkins, nginx,
+    nodejs, redis, mysql, postgre, insomnia, html, css,
+    js, react, bootstrap, vscode, git, github, figma, intellij,
+  } = techStackDetails;
+
+  const techStack = [
+    { src: java, key: "java" },
+    { src: springboot, key: "springboot" },
+    { src: js, key: "js" },
+    { src: nodejs, key: "nodejs" },
+    { src: express, key: "express" },
+    { src: postgre, key: "postgre" },
+    { src: redis, key: "redis" },
+    { src: mysql, key: "mysql" },
+    { src: html, key: "html" },
+    { src: css, key: "css" },
+    { src: react, key: "react" },
+    { src: bootstrap, key: "bootstrap" },
+    { src: tf, key: "tf" },
+  ];
+
+  const tools = [
+    { src: aws, key: "aws" },
+    { src: vscode, key: "vscode" },
+    { src: intellij, key: "intellij" },
+    { src: git, key: "git" },
+    { src: github, key: "github" },
+    { src: figma, key: "figma" },
+    { src: insomnia, key: "insomnia" },
+    { src: nginx, key: "nginx" },
+    { src: jenkins, key: "jenkins" },
+  ];
+
+  const TechGrid = ({ items }) => (
+    <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-7 gap-4 pt-4">
+      {items.map(({ src, key }, i) => (
+        <div
+          key={key}
+          className="tooltip tech-icon-wrapper flex flex-col items-center gap-2 glass-card rounded-2xl p-4 cursor-default"
+          style={{ animationDelay: `${i * 60}ms` }}
+        >
+          <img src={src} alt={TECH_LABELS[key] || key} className="w-10 h-10 object-contain" />
+          <span className="text-slate-500 text-[10px] font-medium text-center leading-tight">
+            {TECH_LABELS[key] || key}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <main className="relative min-h-screen overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="orb orb-blue w-72 h-72 top-20 -right-20 opacity-20" />
+        <div className="orb orb-purple w-64 h-64 bottom-20 -left-20 opacity-20" />
+      </div>
+
+      <div className="max-width section py-20 relative z-10">
+        {/* Header */}
+        <div ref={sectionRef} className="reveal-card mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-indigo-500/30" />
+            <span className="text-indigo-400 text-sm font-medium uppercase tracking-widest">Skills</span>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-indigo-500/30" />
+          </div>
+          <h1 className="section-heading text-white mb-4">
+            Tech <span className="text-gradient">Stack</span>
+          </h1>
+          <p className="text-slate-400 max-w-xl">
+            Technologies and tools I work with daily to build robust, scalable applications.
+          </p>
+        </div>
+
+        {/* Tech Stack Section */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-2">
+            <h2 className="text-white font-semibold text-lg">Languages & Frameworks</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-indigo-500/30 to-transparent" />
+          </div>
+          <TechGrid items={techStack} />
+        </div>
+
+        {/* Tools Section */}
+        <div>
+          <div className="flex items-center gap-3 mb-2">
+            <h2 className="text-white font-semibold text-lg">Tools & Platforms</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-violet-500/30 to-transparent" />
+          </div>
+          <TechGrid items={tools} />
+        </div>
+      </div>
     </main>
   );
 }

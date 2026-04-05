@@ -3,29 +3,23 @@
 import logogradient from "./assets/shashi_logo.png";
 import logo from "./assets/shashi_logo.png";
 // Profile Image
-import profile from "./assets/ShashiProfile.png";
+import profile from "./assets/PP.PNG";
 // Tech stack images
-import python from "./assets/techstack/python.png";
-import pytorch from "./assets/techstack/pytorch.png";
 import tf from "./assets/techstack/tensorflow.png";
 
 import java from "./assets/techstack/java.png";
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
-import sass from "./assets/techstack/sass.png";
 import js from "./assets/techstack/js.png";
 import react from "./assets/techstack/react.png";
 import redux from "./assets/techstack/redux.png";
-import tailwind from "./assets/techstack/tailwind.png";
 import bootstrap from "./assets/techstack/bootstrap.png";
 import vscode from "./assets/techstack/vscode.png";
 import github from "./assets/techstack/github.png";
 import git from "./assets/techstack/git.png";
 import npm from "./assets/techstack/npm.png";
-import postman from "./assets/techstack/postman.png";
 import figma from "./assets/techstack/figma.png";
 import mysql from "./assets/techstack/mysql.png";
-import django from "./assets/techstack/django.png";
 import aws from "./assets/techstack/aws.png";
 
 import intellij from "./assets/techstack/intellij.png";
@@ -33,7 +27,6 @@ import intellij from "./assets/techstack/intellij.png";
 import express from "./assets/techstack/express.png";
 import springboot from "./assets/techstack/springboot.png";
 
-import flask from "./assets/techstack/flask.png";
 import jenkins from "./assets/techstack/jenkins.png";
 import nginx from "./assets/techstack/nginx.png";
 import nodejs from "./assets/techstack/nodejs.png";
